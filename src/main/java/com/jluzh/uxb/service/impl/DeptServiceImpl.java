@@ -80,6 +80,7 @@ public class DeptServiceImpl implements IDeptService {
 	@Override
 	public DeptDto getChildDept(Long deptId) {
 		return this.deptMapper.getChildDeptByPidLazyLoad(deptId);
+		//测试
 	}
 	
 	
