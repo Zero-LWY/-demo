@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jluzh.uxb.dao.IDeptMapper">
+
+
+	<sql id="all_dept_columns">
+		dept_id,dept_name,parent_id,update_time,create_time
+	</sql>
+	
+	<!-- 查找部门 -->
+	<select id="getDeptList" parameterType="dept" resultType="dept">
+		select
+		<include refid="all_dept_columns"></include>
+		from u_department
+	</select>
+
+	<!-- 修改部门 -->
+	<update id = "updateDept" parameterType= "dept">
+		UPDATE u_department 
+		<set>			 
+			<if test = "deptName!=null">
+				dept_name = #{deptName},
+			</if>
+			<if test = "parentId!=null">
+				parent_id = #{parentId},
+			</if>
+			<if test = "updateTime!=null">
+				update_time = now(),
+			</if>
+			<if test = "createTime!=null">
+				create_time = #{createTime},
+			</if>			 
+		</set>
+		WHERE dept_id = #{deptId}
+	</update>
+
+	
+	<!-- 删除部门 -->
+	<delete id = "delDept" parameterType = "long">
+		DELETE FROM u_department WHERE dept_id = #{deptId}
+	</delete>
+	
+	<!-- 增加部门 -->
+	<insert id="addDept" parameterType="dept">
+		insert into u_department(dept_name , parent_id,update_time,create_time)
+			values( #{deptName},  #{parentId}, now() ,now())
+	</insert>
+	
+	<!-- 通过部门ID查找部门 -->
+	<select id="getDeptById" parameterType="Long" resultType="dept">
+		select 
+		<include refid="all_dept_columns"></include>
+		from u_department
+		where dept_id = #{deptId}
+	</select>
+	
+	<!--根据部门id获取部门信息(延迟加载关联用户信息)  -->
+	<!-- 定义查询返回的Map -->
+	<resultMap type="com.jluzh.uxb.dto.DeptDto" id="deptLazyLoadResultMap">
+		<collection property="userList" ofType="user"
+			select="com.jluzh.uxb.dao.IUserMapper.getUserListByDeptId"
+			column="dept_id"
+		></collection>
+	</resultMap>
+	<select id="getDeptUserListResultMap" parameterType="long" resultMap = "deptLazyLoadResultMap">
+		select
+		<include refid="all_dept_columns"></include>
+		from u_department
+		where dept_id = #{deptId}
+	</select>
+		
+	<!-- 根据parentId查找子孙节点 -->
+	<resultMap type="com.jluzh.uxb.dto.DeptDto" id="childDeptLazyloadResultMap">
+		<collection property="childDeptList" ofType="com.jluzh.uxb.dto.DeptDto"
+			select="getChildDeptByPidLazyLoad" column="dept_id"></collection>
+	</resultMap>
+	
+	<select id="getChildDeptByPidLazyLoad" parameterType="long" resultMap="childDeptLazyloadResultMap">
+		select
+		<include refid="all_dept_columns"></include>
+		from u_department
+		where parent_id = #{parentId}
+	</select>
+	
+
+</mapper>

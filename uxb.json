@@ -1,0 +1,570 @@
+{
+  "front-version": "2.19.1",
+  "version": 3,
+  "nodes": [
+    {
+      "type": "Project",
+      "id": "eae7ec5b-a755-42cd-b4a0-71f5a5359c79",
+      "lastModified": "2019-04-26T15:27:01.542+08:00",
+      "name": "uxb"
+    },
+    {
+      "type": "Service",
+      "id": "6a2d5f2e-0e22-4346-bd9d-9634412fe7ba",
+      "lastModified": "2019-04-26T14:51:53.086+08:00",
+      "name": "dept",
+      "parentId": "eae7ec5b-a755-42cd-b4a0-71f5a5359c79"
+    },
+    {
+      "uriEditor": true,
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "deptName",
+              "value": "销售部门"
+            },
+            {
+              "enabled": true,
+              "name": "parentId",
+              "value": "2"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/uxb/dept/add_dept.do"
+      },
+      "id": "07721336-ab5d-4fb4-93dd-7a5e803959e1",
+      "lastModified": "2019-04-26T15:22:34.923+08:00",
+      "name": "add_dept",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "google-oauth2|100220081842520440477"
+      },
+      "parentId": "6a2d5f2e-0e22-4346-bd9d-9634412fe7ba"
+    },
+    {
+      "uriEditor": true,
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "deptId",
+              "value": "12"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/uxb/dept/del_dept.do"
+      },
+      "id": "09bfde87-dde9-49d1-8278-0dafdc96d051",
+      "lastModified": "2019-04-26T15:23:51.063+08:00",
+      "name": "del_dept",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "google-oauth2|100220081842520440477"
+      },
+      "parentId": "6a2d5f2e-0e22-4346-bd9d-9634412fe7ba"
+    },
+    {
+      "uriEditor": true,
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "parentId",
+              "value": "0"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/uxb/dept/get_child_dept.do"
+      },
+      "id": "0f6d24b3-0f0d-4e36-b5ee-4cddef155f6f",
+      "lastModified": "2019-04-26T15:27:01.542+08:00",
+      "name": "get_child_dept",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "google-oauth2|100220081842520440477"
+      },
+      "parentId": "6a2d5f2e-0e22-4346-bd9d-9634412fe7ba"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/uxb/dept/get_dept_list.do"
+      },
+      "id": "eba8134b-c82a-4835-b571-1e16a955fd04",
+      "lastModified": "2019-04-26T15:18:59.756+08:00",
+      "name": "get_dept_list",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "google-oauth2|100220081842520440477"
+      },
+      "parentId": "6a2d5f2e-0e22-4346-bd9d-9634412fe7ba"
+    },
+    {
+      "uriEditor": true,
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "deptId",
+              "value": "5"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/uxb/dept/get_dept_user.do"
+      },
+      "id": "4736cf83-7ea5-449b-9076-cf0c197deb7e",
+      "lastModified": "2019-04-26T15:24:55.454+08:00",
+      "name": "get_dept_user",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "google-oauth2|100220081842520440477"
+      },
+      "parentId": "6a2d5f2e-0e22-4346-bd9d-9634412fe7ba"
+    },
+    {
+      "uriEditor": true,
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "deptId",
+              "value": "11"
+            },
+            {
+              "enabled": true,
+              "name": "deptName",
+              "value": "生产部门"
+            },
+            {
+              "enabled": true,
+              "name": "parentId",
+              "value": "6"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/uxb/dept/update_dept.do"
+      },
+      "id": "66249fb1-c97d-4ff1-89ee-84291ec86fdd",
+      "lastModified": "2019-04-26T15:21:08.743+08:00",
+      "name": "update_dept",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "google-oauth2|100220081842520440477"
+      },
+      "parentId": "6a2d5f2e-0e22-4346-bd9d-9634412fe7ba"
+    },
+    {
+      "type": "Service",
+      "id": "b270f1cc-3b96-49a1-acd8-7b970dd960f2",
+      "lastModified": "2019-04-26T14:52:13.539+08:00",
+      "name": "user",
+      "parentId": "eae7ec5b-a755-42cd-b4a0-71f5a5359c79"
+    },
+    {
+      "type": "Scenario",
+      "description": "",
+      "id": "c0fb98dd-db1f-41ae-84f2-3b987ea8a200",
+      "lastModified": "2019-04-26T14:52:13.539+08:00",
+      "name": "user",
+      "requestOrder": [
+        "add_user",
+        "Request 2",
+        "del_user",
+        "Request 3",
+        "update_user",
+        "Request 4",
+        "get_user_list"
+      ],
+      "parentId": "b270f1cc-3b96-49a1-acd8-7b970dd960f2"
+    },
+    {
+      "uriEditor": true,
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "<!doctype html><html lang=\"en\"><head><title>HTTP Status 404 – Not Found</title><style type=\"text/css\">h1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} h2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} h3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} b {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} p {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;} a {color:black;} a.name {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 404 – Not Found</h1><hr class=\"line\" /><p><b>Type</b> Status Report</p><p><b>Message</b> &#47;uxb&#47;user&#47;logout.do</p><p><b>Description</b> The origin server did not find a current representation for the target resource or is not willing to disclose that one exists.</p><hr class=\"line\" /><h3>Apache Tomcat/9.0.8</h3></body></html>"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "userName",
+              "value": "吴家权"
+            },
+            {
+              "enabled": true,
+              "name": "deptId",
+              "value": "7"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/uxb/user/add_user.do"
+      },
+      "id": "a0257621-f185-4bd3-af14-93f399b0b9c4",
+      "lastModified": "2019-04-26T14:52:13.539+08:00",
+      "name": "add_user",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "google-oauth2|100220081842520440477"
+      },
+      "parentId": "c0fb98dd-db1f-41ae-84f2-3b987ea8a200"
+    },
+    {
+      "uriEditor": true,
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "userId",
+              "value": "4"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/uxb/user/del_user.do"
+      },
+      "id": "6e04a2af-6fb6-4920-b44e-9f1073db22e6",
+      "lastModified": "2019-04-26T14:52:13.539+08:00",
+      "name": "del_user",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "google-oauth2|100220081842520440477"
+      },
+      "parentId": "c0fb98dd-db1f-41ae-84f2-3b987ea8a200"
+    },
+    {
+      "uriEditor": true,
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "userId",
+              "value": "5"
+            },
+            {
+              "enabled": true,
+              "name": "userName",
+              "value": "zqb"
+            },
+            {
+              "enabled": true,
+              "name": "deptId",
+              "value": "7"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/uxb/user/update_user.do"
+      },
+      "id": "c2d14c2a-d280-4958-8d51-4ce7775a6def",
+      "lastModified": "2019-04-26T14:52:13.539+08:00",
+      "name": "update_user",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "google-oauth2|100220081842520440477"
+      },
+      "parentId": "c0fb98dd-db1f-41ae-84f2-3b987ea8a200"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/uxb/user/get_user_list.do"
+      },
+      "id": "e188db4b-bb69-4ab0-98e2-7a153800ceed",
+      "lastModified": "2019-04-26T14:52:13.539+08:00",
+      "name": "get_user_list",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "google-oauth2|100220081842520440477"
+      },
+      "parentId": "c0fb98dd-db1f-41ae-84f2-3b987ea8a200"
+    }
+  ]
+}
